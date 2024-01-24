@@ -15,10 +15,12 @@ set(include_dirs
 set(src_files
     src/main.cpp
     src/Game.cpp
+    src/Player.cpp
 )
 set(include_files
     include/Game.hpp
     include/Constants.hpp
+    include/Player.hpp
     include/system/ResourceHolder.hpp
     include/system/ResourceHolder.tpp
     include/system/ResourceIDs.hpp

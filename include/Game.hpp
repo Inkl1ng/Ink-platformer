@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Player.hpp"
+
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 
@@ -17,6 +19,6 @@ private:
     void render();
 
 private:
-    sf::RenderWindow   m_window;
-    sf::RectangleShape m_player;
+    sf::RenderWindow m_window;
+    Player           m_player;
 };

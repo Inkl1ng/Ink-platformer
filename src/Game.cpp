@@ -7,10 +7,8 @@
 
 Game::Game()
     : m_window {sf::VideoMode(1280, 960), "Ink-Platformer", sf::Style::Close | sf::Style::Titlebar}
-    , m_player {sf::Vector2f(150.f, 150.f)}
+    , m_player {}
 {
-    m_player.setFillColor(sf::Color::Cyan);
-    m_player.setPosition(sf::Vector2f(m_window.getSize().x / 2, m_window.getSize().y / 2));
 }
 
 void Game::run()
@@ -42,21 +40,18 @@ void Game::processEvents()
         {
             m_window.close();
         }
+#ifndef NDEBUG
+        if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
+        {
+            m_window.close();
+        }
+#endif
     }
 }
 
 void Game::processInput(sf::Time delta_time)
 {
-    sf::Vector2f movement;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-    {
-        movement.x += Constants::player_move_speed;
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-    {
-        movement.x -= Constants::player_move_speed;
-    }
-    m_player.move(movement * delta_time.asSeconds());
+    m_player.processInput(delta_time);
 }
 
 void Game::update()
