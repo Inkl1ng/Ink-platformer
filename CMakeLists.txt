@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
 project(Ink-Platformer VERSION 0.1.0 LANGUAGES C CXX)
 
+set(BUILD_SHARED_LIBS OFF)
+
 include(FetchContent)
 FetchContent_Declare(SFML
     GIT_REPOSITORY https://github.com/SFML/SFML.git
