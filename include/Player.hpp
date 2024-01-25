@@ -8,6 +8,8 @@ class Player : public sf::Drawable
 public:
     Player();
 
+    void setTexture(sf::Texture& texture);
+
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
     void processInput(sf::Time delta_time);
@@ -16,7 +18,7 @@ public:
 private:
 
 private:
-    sf::RectangleShape m_shape;
-    sf::Vector2f       m_velocity;
-    bool               m_is_accelerating;
+    sf::Sprite   m_sprite;
+    sf::Vector2f m_velocity;
+    bool         m_is_accelerating;
 };

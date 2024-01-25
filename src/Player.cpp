@@ -7,14 +7,23 @@
 #include <cmath>
 
 Player::Player()
-    : m_shape    {sf::Vector2f {100.f, 100.f}}
+    : m_sprite {}
     , m_velocity {}
 {
 }
 
+void Player::setTexture(sf::Texture& texture)
+{
+    m_sprite.setTexture(texture);
+    // doing this becuase the art work is going to be 32x32 but if I set the game resolution at
+    // 640x480 the screen is really small so I set it at double that but I want the sprites to scale
+    // up as well
+    m_sprite.scale(2.f, 2.f);
+}
+
 void Player::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-    target.draw(m_shape, states);
+    target.draw(m_sprite, states);
 }
 
 void Player::processInput(sf::Time delta_time)
@@ -36,7 +45,7 @@ void Player::processInput(sf::Time delta_time)
     }
     m_is_accelerating = false;
 
-    m_shape.move(m_velocity * delta_time.asSeconds());
+    m_sprite.move(m_velocity * delta_time.asSeconds());
 }
 
 void Player::update(sf::RenderWindow& window)

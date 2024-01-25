@@ -10,7 +10,7 @@ int main()
     std::cout << "*******************\n";
 #endif
 
-    Game game;
+    Game game {};
     game.run();
 
     return 0;
