@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Player.hpp"
+#include "engine/Tile.hpp"
 #include "system/ResourceHolder.hpp"
 
 #include <SFML/Graphics.hpp>
@@ -25,4 +26,5 @@ private:
     sf::View         m_view;
     Player           m_player;
     TextureHolder    m_texture_holder;
+    Tile             m_tile;
 };

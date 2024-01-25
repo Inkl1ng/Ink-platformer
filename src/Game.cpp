@@ -11,6 +11,7 @@ Game::Game()
     , m_view {{640.f, 480.f}, {1280.f, 960.f}}
     , m_player {}
     , m_texture_holder {}
+    , m_tile {14}
 {
     // m_view.zoom(0.5f);
     // m_window.setView(m_view);
@@ -40,8 +41,10 @@ void Game::run()
 void Game::loadResources()
 {
     m_texture_holder.load(TextureID::player, "player.png");
+    m_texture_holder.load(TextureID::tile, "tile.png");
 
     m_player.setTexture(m_texture_holder.get(TextureID::player));
+    m_tile.setTexture(m_texture_holder.get(TextureID::tile));
 }
 
 void Game::processEvents()
@@ -75,7 +78,8 @@ void Game::render()
 {
     m_window.clear();
 
-    m_window.draw(m_player);
+    // m_window.draw(m_player);
+    m_window.draw(m_tile);
 
     m_window.display();
 }

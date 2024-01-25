@@ -3,6 +3,7 @@
 enum class TextureID
 {
     player,
+    tile,
 };
 
 enum class FontID
