@@ -1,22 +1,18 @@
 #pragma once
 
-enum class TextureID
-{
+enum class Texture_id {
     player,
     tile,
 };
 
-enum class FontID
-{
+enum class Font_id {
 
 };
 
-enum class SoundID
-{
+enum class Sound_id {
 
 };
 
-enum class MusicID
-{
+enum class Music_id {
 
 };
