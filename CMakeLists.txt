@@ -16,12 +16,14 @@ set(src_files
     src/main.cpp
     src/Player.cpp
     src/engine/Entity.cpp
+    src/engine/Tile.cpp
 )
 set(include_files
     include/Constants.hpp
     include/Game.hpp
     include/Player.hpp
     include/engine/Entity.hpp
+    include/engine/Tile.hpp
     include/system/ResourceHolder.hpp
     include/system/ResourceHolder.tpp
     include/system/ResourceIDs.hpp
