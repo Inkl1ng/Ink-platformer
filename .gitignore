@@ -36,6 +36,10 @@ Debug/
 Release/
 MinSizeRel/
 RelWithDebInfo
+build/
 
 # VSCode
 .vscode/
+
+# clangd
+.cache/
