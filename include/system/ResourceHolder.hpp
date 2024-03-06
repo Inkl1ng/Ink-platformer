@@ -18,10 +18,10 @@ public:
     const Resource&     get(Identifier id) const;
 
 private:
+    /// Resources are allocated on the heap with unique_ptr's and are associated with a identifier
     std::map<Identifier, std::unique_ptr<Resource>>     resource_map;
 };
 
-// typedefs for the 4 different resources
 typedef Resource_holder<sf::Texture, Texture_id>         Texture_holder;
 typedef Resource_holder<sf::Font, Font_id>               Font_holder;
 typedef Resource_holder<sf::SoundBuffer, Sound_id>       Sound_holder;
